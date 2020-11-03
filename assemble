@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+#run in terminal: ./assemble <Input>.fasta <Output>.fasta size k-mer
+import sys
+sys.path.append('./codes/')
+from utils import *
+from correct_errors import *
+from de_bruijn import *
+from assemble import assemble_data
+
+
+input_file = sys.argv[1]
+output_file = sys.argv[2]
+k = int(sys.argv[3])
+k_mer = sys.argv[4]
+
+
+assemble_data(input_file, k, k_mer, output_file)
